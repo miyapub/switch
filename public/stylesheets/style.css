@@ -1,0 +1,92 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.red{
+color: #f00;
+    /* text-decoration: underline; */
+    padding-bottom: 1em;
+    /* display: block; */
+    /* line-height: 10px; */
+    /* height: 50px; */
+    border-bottom: solid 2px #f00;
+    text-align: center;
+}
+
+    .mobile {
+      background: none;
+      width: 38.89vh;
+      height:85vh;
+      position: fixed;
+      top: 10vh;
+      bottom: 10vh;
+      left: 10vh;
+      background: url('/public/images/iphone.png');
+      background-size: 100% 100%;
+      text-align: center;
+    }
+
+.mobile .content{
+    width: 81%;
+    height: 69.6%;
+    position: absolute;
+    top: 15.4%;
+    bottom: 0;
+    left: 10%;
+    right: 0;
+    background: #fff;
+}
+
+.qrcode {
+    position: fixed;
+    left: 60vw;
+    width: 20vh;
+    height: 20vh;
+    top: 40vh;
+    bottom: 40vh;
+    background: #000;
+}
+.qrcode canvas{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+img{
+  width: 80%;
+  margin: 10px auto;
+}
+h1{
+  font-size: 20px;
+}
+@media screen and (max-width: 700px) {
+    .qrcode,.nav {
+      display: none;
+    }
+    .mobile {
+      background: none;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+    .mobile .content{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+}

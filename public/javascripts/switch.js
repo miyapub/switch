@@ -1,0 +1,12 @@
+$(document).ready(function(){
+    $('.off').click(function(){
+        $.getJSON('/api/off',function(x){
+            console.log(x);
+        });
+    });
+    $('.on').click(function(){
+        $.getJSON('/api/on',function(x){
+            console.log(x);
+        });
+    });
+});

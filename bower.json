@@ -1,0 +1,18 @@
+{
+  "name": "switch",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://github.com/miyapub/switch",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.0.0",
+    "jquery-qrcode": "*"
+  }
+}

@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    title= title
+    meta(name="viewport",content="initial-scale=1.0,maximum-scale=1,user-scalable=no")
+    link(rel='stylesheet', href='/public/stylesheets/style.css')
+    script(src='/bower_components/jquery/dist/jquery.min.js')
+    script(src='/bower_components/jquery-qrcode/jquery.qrcode.min.js')
+  body
+    div.nav
+    div.mobile
+      div.content
+        block content
+    div.qrcode
+    script
+      | $('.qrcode').qrcode(window.location.href);
+    div.footer
+      a.nav(href='/#{next.href}') #{next.title}
+    script(src='/public/javascripts/sync.js')
