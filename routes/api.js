@@ -3,14 +3,17 @@ var router = express.Router();
 var fs = require ('fs');
 var path = require ('path');
 var jsonfile = require('jsonfile');
+var nodegpio=require('nodegpio');
 /* GET home page. */
 
 
 function off(cb){
+  nodegpio.low(21,0);
   var json={err:false,state:0,msg:'已关闭'};
   cb(json);
 }
 function on(cb){
+  nodegpio.high(21,1);
   var json={err:false,state:1,msg:'已点亮'};
   cb(json);
 }
