@@ -1,3 +1,4 @@
+var cando=true;
 var SHAKE_THRESHOLD = 800;
     var last_update = 0;
     var x = y = z = last_x = last_y = last_z = 0;
@@ -9,6 +10,8 @@ var SHAKE_THRESHOLD = 800;
     }
 
     function deviceMotionHandler(eventData) {
+       if(cando){
+       
         var acceleration = eventData.accelerationIncludingGravity;
         var curTime = new Date().getTime();
 
@@ -28,15 +31,18 @@ var SHAKE_THRESHOLD = 800;
             last_y = y;
             last_z = z;
         }
+      }
     }
 
     function doResult() {
+        cando=false;
         $.getJSON('/api/toggle',function(json){
             $('.msg').text(json.msg);
         });
         document.getElementById("result").className = "result";
         document.getElementById("loading").className = "loading loading-show";
         setTimeout(function(){
+            cando=true;
             //document.getElementById("hand").className = "hand";
             document.getElementById("result").className = "result result-show";
             document.getElementById("loading").className = "loading";
