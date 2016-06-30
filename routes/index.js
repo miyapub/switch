@@ -3,19 +3,37 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: '点亮电灯的3种方法' ,next:{href:'switch',title:'普通方法'}});
+  res.render('index', { title: '点亮电灯的3种方法'});
 });
 
 router.get('/index', function(req, res, next) {
-  res.render('index', { title: '点亮电灯的3种方法' ,next:{href:'switch',title:'普通方法'}});
+  res.render('index', { title: '点亮电灯的3种方法'});
 });
 
 router.get('/switch', function(req, res, next) {
-  res.render('switch', { title: '普通开关' ,next:{href:'toggle',title:'toggle'}});
+  res.render('switch', { title: '普通开关'});
 });
 
+router.get('/info', function(req, res, next) {
+  res.render('info', { title: '介绍'});
+});
+
+router.get('/future', function(req, res, next) {
+  res.render('future', { title: '未来'});
+});
+
+
+router.get('/game', function(req, res, next) {
+  res.render('game', { title: '游戏'});
+});
+
+router.get('/3q', function(req, res, next) {
+  res.render('3q', { title: '谢谢'});
+});
+
+
 router.get('/toggle', function(req, res, next) {
-  res.render('toggle', { title: '触碰开关' ,next:{href:'hand',title:'摇一摇'}});
+  res.render('toggle', { title: '触碰开关'});
 });
 
 /*
@@ -24,6 +42,6 @@ router.get('/shop', function(req, res, next) {
 });*/
 
 router.get('/hand', function(req, res, next) {
-  res.render('hand', { title: '摇一摇' ,next:{href:'game',title:'玩游戏'}});
+  res.render('hand', { title: '摇一摇'});
 });
 module.exports = router;
