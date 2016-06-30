@@ -16,5 +16,5 @@ html
     script
       | $('.qrcode').qrcode(window.location.href);
     div.footer
-      a.nav(href='/#{next.href}') #{next.title}
+      button.nav.goto(url='/#{next.href}') #{next.title}
     script(src='/public/javascripts/sync.js')

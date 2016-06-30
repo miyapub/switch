@@ -31,3 +31,11 @@ var page=function(){
 setInterval(function(){
     page();
 },1000);
+
+$('.goto').click(function(){
+    var router=$(this).attr('url');
+    var url='/api/page'+router;
+    $.getJSON(url,function(x){
+        console.log(x);
+    });
+});

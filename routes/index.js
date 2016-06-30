@@ -6,6 +6,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: '点亮电灯的3种方法' ,next:{href:'switch',title:'普通方法'}});
 });
 
+router.get('/index', function(req, res, next) {
+  res.render('index', { title: '点亮电灯的3种方法' ,next:{href:'switch',title:'普通方法'}});
+});
+
 router.get('/switch', function(req, res, next) {
   res.render('switch', { title: '普通开关' ,next:{href:'toggle',title:'toggle'}});
 });
