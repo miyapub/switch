@@ -2,7 +2,17 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
+.admin ,.footer{
+ display:none;
+}
+.admin{
+ position:fixed;
+ bottom:0;
+ left:0;
+ right:0;
+ height:30px;
+ width:100%;
+}
 a {
   color: #00B7FF;
 }
@@ -67,7 +77,7 @@ h1{
   font-size: 20px;
 }
 @media screen and (max-width: 700px) {
-    .qrcode,.nav {
+    .qrcode{
       display: none;
     }
     .mobile {

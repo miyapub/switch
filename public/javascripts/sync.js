@@ -2,8 +2,11 @@ var page=function(){
     console.log('checking...');
     var page=window.location.href;
     if(page.includes('admin')){
+	$('.admin').show();
+    }
+    //if(page.includes('admin')){
         //这里不同步
-    }else{
+    //}else{
         //这里同步
         page=page.split('/');
         var thisrouter=page[page.length-1];
@@ -25,7 +28,7 @@ var page=function(){
                 window.location.href=href+remot_routername;
             }
         });
-    }
+    //}
     
 }
 setInterval(function(){

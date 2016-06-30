@@ -8,13 +8,19 @@ html
     script(src='/bower_components/jquery/dist/jquery.min.js')
     script(src='/bower_components/jquery-qrcode/jquery.qrcode.min.js')
   body
-    div.nav
     div.mobile
       div.content
         block content
     div.qrcode
     script
       | $('.qrcode').qrcode(window.location.href);
+    div.admin
+      button.nav.goto(url='/index') index
+      button.nav.goto(url='/switch') switch
+      button.nav.goto(url='/info') info
+      button.nav.goto(url='/toggle') toggle
+      button.nav.goto(url='/hand') hand
+      button.nav.goto(url='/game') game
     div.footer
       button.nav.goto(url='/#{next.href}') #{next.title}
     script(src='/public/javascripts/sync.js')
