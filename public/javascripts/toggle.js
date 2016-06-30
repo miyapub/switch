@@ -1,0 +1,10 @@
+$(document).ready(function(){
+    $.getJSON('/api/state',function(json){
+       $('.msg').text(json.msg);
+    });
+    $('.msg').click(function(){
+        $.getJSON('/api/toggle',function(json){
+            $('.msg').text(json.msg);
+        });
+    });
+});

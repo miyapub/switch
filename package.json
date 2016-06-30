@@ -12,6 +12,7 @@
     "debug": "~2.2.0",
     "express": "^4.13.4",
     "jade": "~1.11.0",
+    "jsonfile": "^2.3.1",
     "morgan": "~1.6.1",
     "nodegpio": "^1.0.7",
     "request-json": "^0.5.6",
