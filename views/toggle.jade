@@ -1,6 +1,14 @@
 extends layout
 
 block content
-  button.msg
+  h1 智能家居
+  h2 台灯
+  button.msg.btn.btn-success
+  hr 
+  h2 客厅
+  button.btn.btn-success(disabled) 已关闭
+  hr 
+  h2 床灯
+  button.btn.btn-success(disabled) 已关闭
   link(rel='stylesheet', href='/public/stylesheets/toggle.css')
   script(src='/public/javascripts/toggle.js')

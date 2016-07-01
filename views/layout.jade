@@ -4,24 +4,30 @@ html
     meta(charset="UTF-8")
     title= title
     meta(name="viewport",content="initial-scale=1.0,maximum-scale=1,user-scalable=no")
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='/public/stylesheets/style.css')
     script(src='/bower_components/jquery/dist/jquery.min.js')
+    script(src='/bower_components/bootstrap/dist/js/bootstrap.min.js')
     script(src='/bower_components/jquery-qrcode/jquery.qrcode.min.js')
   body
     div.mobile
       div.content
-        block content
+        div.padding
+          block content
     div.qrcode
     script
       | $('.qrcode').qrcode(window.location.href);
     div.admin
+      button.nav.goto(url='/up') up
       button.nav.goto(url='/index') index
+      button.nav.goto(url='/keywords') key
       button.nav.goto(url='/switch') switch
+      button.nav.goto(url='/hand') hand
       button.nav.goto(url='/info') info
       button.nav.goto(url='/toggle') toggle
-      button.nav.goto(url='/hand') hand
       button.nav.goto(url='/future') future
-      button.nav.goto(url='/game') game
       button.nav.goto(url='/3q') 3Q
+      button.nav.cmd(url='/zero') zero(C)
+      button.nav.cmd(url='/toggle') toggle(C)
     div.footer
     script(src='/public/javascripts/sync.js')

@@ -3,11 +3,11 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: '点亮电灯的3种方法'});
+  res.render('index', { title: '爱迪生都不知道的开灯方式'});
 });
 
 router.get('/index', function(req, res, next) {
-  res.render('index', { title: '点亮电灯的3种方法'});
+  res.render('index', { title: '爱迪生都不知道的开灯方式'});
 });
 
 router.get('/switch', function(req, res, next) {
@@ -27,13 +27,21 @@ router.get('/game', function(req, res, next) {
   res.render('game', { title: '游戏'});
 });
 
+router.get('/keywords', function(req, res, next) {
+  res.render('keywords', { title: '关键字'});
+});
+
 router.get('/3q', function(req, res, next) {
   res.render('3q', { title: '谢谢'});
 });
 
 
 router.get('/toggle', function(req, res, next) {
-  res.render('toggle', { title: '触碰开关'});
+  res.render('toggle', { title: '智能家居'});
+});
+
+router.get('/up', function(req, res, next) {
+  res.render('up', { title: '一起来点赞'});
 });
 
 /*

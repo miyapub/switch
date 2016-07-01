@@ -42,3 +42,10 @@ $('.goto').click(function(){
         console.log(x);
     });
 });
+$('.cmd').click(function(){
+    var router=$(this).attr('url');
+    var url='/api'+router;
+    $.getJSON(url,function(x){
+        console.log(x);
+    });
+});

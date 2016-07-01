@@ -13,6 +13,7 @@
   ],
   "dependencies": {
     "jquery": "^3.0.0",
-    "jquery-qrcode": "*"
+    "jquery-qrcode": "*",
+    "bootstrap": "^3.3.6"
   }
 }

@@ -9,11 +9,27 @@ var nodegpio=require('nodegpio');
 
 function off(cb){
   nodegpio.low(21,0);
+  //
+  var state_json={
+     state:0
+  }
+  var file=path.join(__dirname, '../public/state.json');
+  jsonfile.writeFile(file, state_json, {spaces: 2}, function(err) {
+
+  });
+  //
   var json={err:false,state:0,msg:'已关闭'};
   cb(json);
 }
 function on(cb){
   nodegpio.high(21,1);
+    var state_json={
+     state:1
+  }
+  var file=path.join(__dirname, '../public/state.json');
+  jsonfile.writeFile(file, state_json, {spaces: 2}, function(err) {
+
+  });
   var json={err:false,state:1,msg:'已点亮'};
   cb(json);
 }
@@ -31,7 +47,6 @@ router.get('/off', function(req, res, next) {
 });
 
 router.get('/toggle', function(req, res, next) {
-  //
   var file=path.join(__dirname, '../public/state.json');
   jsonfile.readFile(file, function(err, json) {
     var state=json.state;
@@ -40,24 +55,17 @@ router.get('/toggle', function(req, res, next) {
     }else{
       state=1;
     }
-    var state_json={
-      state:state
-    }
-
-    jsonfile.writeFile(file, state_json, {spaces: 2}, function(err) {
-      if(state===1){
+    if(state===1){
         on(function(json){
           res.json(json);
         });
-      }
-      if(state===0){
+    }
+    if(state===0){
         off(function(json){
           res.json(json);
         });
-      }
-    });
+    }
   });  
-  //
 });
 
 router.get('/state', function(req, res, next) {
@@ -73,6 +81,68 @@ router.get('/state', function(req, res, next) {
     }
   });  
   //
+});
+
+router.get('/updownnumber', function(req, res, next) {
+  var file=path.join(__dirname, '../public/updownnumber.json');
+  jsonfile.readFile(file, function(err, json) {
+    var number=json.number;
+    res.json({number:number});
+  });  
+});
+
+
+function setNumber(number,cb){
+  if(number<0){
+    number=0;
+  }
+  if(number>100){
+    number=100;
+  }
+  var json={
+        number:number
+  };
+  if(number===100){
+    on(function(){});
+  }
+  if(number<100){
+    off(function(){});
+  }
+  var file=path.join(__dirname, '../public/updownnumber.json');
+  jsonfile.writeFile(file, json, {spaces: 2}, function(err) {
+    cb({number:number});
+  });
+}
+
+router.get('/up', function(req, res, next) {
+  var file=path.join(__dirname, '../public/updownnumber.json');
+  jsonfile.readFile(file, function(err, json) {
+    var number=json.number;
+    number=parseInt(number);
+    setNumber(number+1,function(x){
+      res.json(x);
+    });
+  });  
+});
+router.get('/down', function(req, res, next) {
+  var file=path.join(__dirname, '../public/updownnumber.json');
+  jsonfile.readFile(file, function(err, json) {
+    var number=json.number;
+    number=parseInt(number);
+    setNumber(number-1,function(x){
+      res.json(x);
+    });
+  });  
+});
+
+//
+router.get('/zero', function(req, res, next) {
+  var file=path.join(__dirname, '../public/updownnumber.json');
+  jsonfile.readFile(file, function(err, json) {
+    setNumber(0,function(x){
+      res.json(x);
+    });
+  });  
 });
 
 router.get('/page/:routername', function(req, res, next) {

@@ -1,7 +1,12 @@
 extends layout
 
 block content
-  h1= title
-  button.on 点亮
-  button.off 熄灭
+  h1=title
+  div.row
+    div.col-xs-2
+    div.col-xs-4
+      button.on.btn.btn-success 点亮
+    div.col-xs-4
+      button.off.btn.btn-danger 熄灭
+    div.col-xs-2    
   script(src='/public/javascripts/switch.js')
