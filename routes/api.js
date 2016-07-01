@@ -117,9 +117,10 @@ function setNumber(number,cb){
 router.get('/up', function(req, res, next) {
   var file=path.join(__dirname, '../public/updownnumber.json');
   jsonfile.readFile(file, function(err, json) {
+    
     var number=json.number;
     number=parseInt(number);
-    setNumber(number+1,function(x){
+    setNumber(number+2,function(x){
       res.json(x);
     });
   });  
