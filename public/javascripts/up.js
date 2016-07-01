@@ -15,5 +15,5 @@ $(document).ready(function(){
         });
     }
     getNumber();
-    setInterval(getNumber,1000);
+    setInterval(getNumber,2000);
 });

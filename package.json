@@ -16,6 +16,7 @@
     "morgan": "~1.6.1",
     "nodegpio": "^1.0.7",
     "request-json": "^0.5.6",
+    "scanraspberrypi": "^1.0.1",
     "serve-favicon": "^2.3.0"
   }
 }
